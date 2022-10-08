@@ -1,24 +1,24 @@
 CC = g++
 CFLAGS =  -pedantic -O3 -lm -Wall -Wextra -g
-.PHONY: all
-all: tp2
+TARGET = tp2
+INCLUDES = -I ../src/
+
+all: $(TARGET)
 
 valgrind: 
 	valgrind --leak-check=full  --undef-value-errors=yes ./tp2
 
-all: tp2
-
-tp2: main_cpp.o eigen_cpp.o utils_cpp.o
+$(TARGET): main_cpp.o eigen_cpp.o utils_cpp.o
 	$(CC) $(CFLAGS) $^  -o $@ $(LDLIBS)
 
-main_cpp.o: main.cpp eigen.h types.h
-	$(CC) $(CFLAGS) -c -I ../src/ $< -o $@
-#/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src
+main_cpp.o: main.cpp eigen.h types.h utils.h
+	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
+
 eigen_cpp.o: eigen.cpp eigen.h types.h
-	$(CC) $(CFLAGS) -c -I ../src/ $< -o $@
+	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
 
 utils_cpp.o: utils.cpp utils.h types.h
-	$(CC) $(CFLAGS) -c -I ../src/ $< -o $@
+	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
 
 .PHONY: clean
 

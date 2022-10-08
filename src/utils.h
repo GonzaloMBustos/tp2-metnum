@@ -17,7 +17,7 @@ SparseMatrix read_ego_facebook();
 //SparseMatrix read_test();
 
 void print_sparce_matrix(SparseMatrix &m);  
-
+ 
 /*
 Genera un archivo .out con los autovalores 
 */
