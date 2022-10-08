@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <fstream> //Para leer el archivo
 #include <iomanip> //Para setear la precision de la salida
 #include<chrono> //Por el tiempo
@@ -13,6 +12,13 @@
 
 
 SparseMatrix read_matrix_karate(); 
-void print_sparce_matrix(SparseMatrix &m);  
 SparseMatrix read_ego_facebook();
 
+//SparseMatrix read_test();
+
+void print_sparce_matrix(SparseMatrix &m);  
+
+/*
+Genera un archivo .out con los autovalores 
+*/
+void out_eigvalues(Vector &eigvals, string path); 

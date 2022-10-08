@@ -1,7 +1,10 @@
 #include <iostream>
 
-#include "eigen.cpp"
-#include "utils.cpp"
+#include "types.h"
+#include "utils.h"
+
+//#include "eigen.cpp"
+//#include "utils.cpp"
 
 using namespace std;
 
@@ -12,4 +15,5 @@ int main(){
     
     return 0; 
 }
+
 

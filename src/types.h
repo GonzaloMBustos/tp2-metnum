@@ -1,7 +1,7 @@
 #pragma once
 
-#include <eigen3/Eigen/Sparse>
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Sparse>
+#include <Eigen/Dense>
 
 using namespace std;
 using Eigen::MatrixXd;

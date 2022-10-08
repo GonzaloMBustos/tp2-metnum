@@ -48,3 +48,11 @@ SparseMatrix read_ego_facebook(){
     mat_ego_face.setFromTriplets(tripletList.begin(), tripletList.end());
     return mat_ego_face; 
 }
+
+void out_eigvalues(Vector eigvals, string path){
+    ofstream output(path); 
+    for(Vector::iterator it = eigvals.begin(); it != eigvals.end();  it++){
+        output << *it; 
+    }
+}
+
