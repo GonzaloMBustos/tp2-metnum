@@ -32,19 +32,19 @@ SparseMatrix read_ego_facebook(){
     double epsilon = pow(10, -5);
 
     ifstream input("../datasets/ego-facebook.edges");  
-     
-    std::vector<T> tripletList;
-    tripletList.reserve(3000);
+    int m = 28048; 
+    int n = 3436; 
 
-    for(int i = 0; i < 34; i++){
-        for(int j = 0; j < 34; j++){
-            double a, b;
-            input >> a >> b; 
-            tripletList.push_back(T(a,b,1));
-        }
+    std::vector<T> tripletList;
+    tripletList.reserve(m);
+
+    for(int i = 0; i < m; i++){
+        double a, b;
+        input >> a >> b; 
+        tripletList.push_back(T(a-1,b-1,1));
     }
 
-    SparseMatrix mat_ego_face(3500, 3500);
+    SparseMatrix mat_ego_face(n, n);
     mat_ego_face.setFromTriplets(tripletList.begin(), tripletList.end());
     return mat_ego_face; 
 }
