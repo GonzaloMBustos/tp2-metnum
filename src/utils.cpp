@@ -49,10 +49,21 @@ SparseMatrix read_ego_facebook(){
     return mat_ego_face; 
 }
 
-void out_eigvalues(Vector eigvals, string path){
+void out_eigvalues(Vector &eigvals, string path){
     ofstream output(path); 
     for(Vector::iterator it = eigvals.begin(); it != eigvals.end();  it++){
-        output << *it; 
+        output << *it << "\n"; 
     }
+}
+
+void out_eigvectors(Matrix &eigvect, string path){
+    ofstream output(path); 
+    for (int k = 0; k< eigvect.outerSize(); ++k){
+        for( Matrix::InnerIterator it(eigvect, k); it; ++it){
+            output << it.value()<< "\t"; 
+        }
+        output <<endl; 
+    }
+    
 }
 
