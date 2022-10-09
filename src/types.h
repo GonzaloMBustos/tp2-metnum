@@ -13,3 +13,4 @@ typedef Eigen::SparseMatrix<double> SparseMatrix;
 typedef Eigen::VectorXd Vector;
 
 typedef Eigen::Triplet<double> T; //to build sparce matrix efficiently
+
