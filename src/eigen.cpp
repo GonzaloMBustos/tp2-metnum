@@ -5,7 +5,6 @@
 
 using namespace std;
 
-namespace py=pybind11;
 
 // Matriz, dinámica, de tamaño arbitrario (X), con elementos del tipo Double(D)
 using Eigen::MatrixXd;
@@ -49,28 +48,4 @@ pair<Vector, Matrix> deflation(const Matrix &X, unsigned num, unsigned num_iter,
 		eigvectors.col(i) = v;
 	}
 	return make_pair(eigvalues, eigvectors);
-}
-
-void print_hey(){
-	cout << "HEY" <<endl; 
-}
-
-void print_bye(){
-	cout << "BYE" <<endl; 
-}
-
-PYBIND11_MODULE(lib_tp2, m) {
-    m.def(
-        "power_iteration", &power_iteration,
-        "doingthings"
-    );
-	m.def(
-		"deflation", &deflation,
-		"deflation"
-	);
-	m.def(
-		"print_hey",  &print_hey,
-		"print hey"
-	);
-	
 }
