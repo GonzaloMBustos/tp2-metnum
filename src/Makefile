@@ -1,9 +1,9 @@
 CC = g++
-CFLAGS =  -pedantic -O3 -lm -Wall -Wextra -g
-CFLAGS2 := -O3 -Wall -std=c++11 -I ../src/ -I /usr/include/python3.8 -I ../src/pybind11/include
+CFLAGS = -pedantic -std=c++11 -O3 -lm -Wall -Wextra -g
+CFLAGS2 := -O3 -Wall -std=c++11 
 
 TARGET = tp2
-INCLUDES = -I ../src/
+INCLUDES = -I ../src/  -I ../../../../usr/include/python3.8 -I ../src/pybind11/include
 
 all: $(TARGET)
 
@@ -11,10 +11,10 @@ valgrind:
 	valgrind --leak-check=full  --undef-value-errors=yes ./tp2
 
 libpy:
-	g++ -shared -fPIC $(CFLAGS2) eigen.cpp  -o lib_tp2`python-config --extension-suffix`
+	g++ -shared -fPIC $(CFLAGS2) $(INCLUDES) eigen.cpp  -o lib_tp2`python3-config --extension-suffix`
 
 $(TARGET): main_cpp.o eigen_cpp.o utils_cpp.o
-	$(CC) $(CFLAGS) $^  -o $@ $(LDLIBS)
+	$(CC) $(CFLAGS) $^  -o $@ $(LDLIBS) $(INCLUDES)
 
 main_cpp.o: main.cpp eigen.h types.h utils.h
 	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@

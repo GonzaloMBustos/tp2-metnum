@@ -64,6 +64,5 @@ void out_eigvectors(Matrix &eigvect, string path){
         }
         output <<endl; 
     }
-    
 }
 

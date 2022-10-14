@@ -48,12 +48,15 @@ pair<Vector, Matrix> deflation(const Matrix &X, unsigned num, unsigned num_iter,
 		eigvalues[i] = a;
 		eigvectors.col(i) = v;
 	}
-
 	return make_pair(eigvalues, eigvectors);
 }
 
 void print_hey(){
 	cout << "HEY" <<endl; 
+}
+
+void print_bye(){
+	cout << "BYE" <<endl; 
 }
 
 PYBIND11_MODULE(lib_tp2, m) {
@@ -62,7 +65,12 @@ PYBIND11_MODULE(lib_tp2, m) {
         "doingthings"
     );
 	m.def(
+		"deflation", &deflation,
+		"deflation"
+	);
+	m.def(
 		"print_hey",  &print_hey,
 		"print hey"
 	);
+	
 }
