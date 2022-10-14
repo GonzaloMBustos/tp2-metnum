@@ -6,7 +6,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I ../")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/include/python3.8 ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I ../pybind11/include")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/pybind11")
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
     message("Debug mode")

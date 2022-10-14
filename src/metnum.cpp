@@ -11,7 +11,7 @@ using namespace std;
 
 namespace py=pybind11;
 
-PYBIND11_MODULE(lib_tp2, m) {
+PYBIND11_MODULE(metnum, m) {
     m.def(
         "power_iteration", &power_iteration,
         "doingthings"

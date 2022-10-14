@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so")
+  if(EXISTS "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so"
+         FILE "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so")
+   "/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks" TYPE MODULE FILES "/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/build/metnum.so")
-  if(EXISTS "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so")
+file(INSTALL DESTINATION "/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks" TYPE MODULE FILES "/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/build/metnum.cpython-38-x86_64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/notebooks/metnum.cpython-38-x86_64-linux-gnu.so")
     endif()
   endif()
 endif()
