@@ -1,7 +1,6 @@
 #pragma once
 #include "types.h"
 
-
 /*
 Calcula el autovalor (y autovector correspondiente) de módulo máximo
 Parámetros:

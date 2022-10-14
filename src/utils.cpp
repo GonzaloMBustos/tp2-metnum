@@ -3,7 +3,7 @@
 SparseMatrix read_matrix_karate(){
     double epsilon = pow(10, -5);
 
-    ifstream input("../datasets/karateclub_matriz.txt");  
+    ifstream input("../../datasets/karateclub_matriz.txt");  
      
     std::vector<T> tripletList;
     tripletList.reserve(156);
@@ -31,7 +31,7 @@ void print_sparce_matrix(SparseMatrix &m){
 SparseMatrix read_ego_facebook(){
     double epsilon = pow(10, -5);
 
-    ifstream input("../datasets/ego-facebook.edges");  
+    ifstream input("../../datasets/ego-facebook.edges");  
     int m = 28048; 
     int n = 3436; 
 

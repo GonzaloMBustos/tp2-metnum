@@ -16,8 +16,4 @@ PYBIND11_MODULE(lib_tp2, m) {
         "power_iteration", &power_iteration,
         "doingthings"
     );
-	m.def(
-		"print_hey",  &print_hey,
-		"print hey"
-	);
 }

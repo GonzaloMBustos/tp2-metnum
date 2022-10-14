@@ -51,7 +51,4 @@ pair<Vector, Matrix> deflation(const Matrix &X, unsigned num, unsigned num_iter,
 	return make_pair(eigvalues, eigvectors);
 }
 
-void print_hey(){
-	cout << "HEY" <<endl; 
-}
 

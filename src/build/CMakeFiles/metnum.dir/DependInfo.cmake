@@ -17,9 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../Eigen"
   "../pybind11/include"
-  "/usr/include/python3.8"
+  "/usr/include/python2.7"
   )
 
 # Targets to which this target links.
