@@ -1,9 +1,6 @@
 #pragma once
 #include "types.h"
 
-#include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
-#include <pybind11/eigen.h>
 
 /*
 Calcula el autovalor (y autovector correspondiente) de módulo máximo

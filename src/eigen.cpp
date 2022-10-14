@@ -5,7 +5,6 @@
 
 using namespace std;
 
-namespace py=pybind11;
 
 // Matriz, dinámica, de tamaño arbitrario (X), con elementos del tipo Double(D)
 using Eigen::MatrixXd;
@@ -56,13 +55,3 @@ void print_hey(){
 	cout << "HEY" <<endl; 
 }
 
-PYBIND11_MODULE(lib_tp2, m) {
-    m.def(
-        "power_iteration", &power_iteration,
-        "doingthings"
-    );
-	m.def(
-		"print_hey",  &print_hey,
-		"print hey"
-	);
-}
