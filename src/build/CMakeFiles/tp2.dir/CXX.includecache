@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/eigen.cpp
-algorithm
--
-chrono
--
-iostream
--
-eigen.h
-/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/eigen.h
-
 /home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/eigen.h
 types.h
 /home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/types.h
@@ -35,10 +25,6 @@ Eigen/Sparse
 -
 Eigen/Dense
 -
-
-/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/utils.cpp
-utils.h
-/home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/utils.h
 
 /home/paula/Documents/COMPUTACION/Metodos-2c2022/tp2-metnum/src/utils.h
 fstream

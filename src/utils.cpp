@@ -56,14 +56,15 @@ void out_eigvalues(Vector &eigvals, string path){
     }
 }
 
-void out_eigvectors(Matrix &eigvect, string path){
+void out_eigvectors(Matrix eigvect, string path){
     ofstream output(path); 
-    for (int k = 0; k< eigvect.outerSize(); ++k){
-        for( Matrix::InnerIterator it(eigvect, k); it; ++it){
+    for (int k = 0; k< eigvect.outerSize(); ++k){ 
+        for(Matrix::InnerIterator it(eigvect, k); it; ++it){
             output << it.value()<< "\t"; 
         }
         output <<endl; 
     }
     
 }
+
 
