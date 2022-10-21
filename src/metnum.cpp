@@ -16,4 +16,8 @@ PYBIND11_MODULE(metnum, m) {
         "power_iteration", &power_iteration,
         "doingthings"
     );
+    m.def(
+        "deflation", &deflation,
+        "doingthings"
+    );
 }
