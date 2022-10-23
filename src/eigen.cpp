@@ -47,8 +47,5 @@ pair<Vector, Matrix> deflation(const Matrix &X, unsigned num, unsigned num_iter,
 		eigvalues[i] = a;
 		eigvectors.col(i) = v;
 	}
-
 	return make_pair(eigvalues, eigvectors);
 }
-
-
