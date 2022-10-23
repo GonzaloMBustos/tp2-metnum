@@ -4,10 +4,9 @@ import numpy as np
 
 def test_deflation(M):
     num = M.shape[0]
-    epsilon = 0.00000001
+    epsilon = 1e-8
 
-
-    (rvals, rvecs) = mt.deflation(M, num, 10000, 0.000000001)
+    (rvals, rvecs) = mt.deflation(M, num, 10000, 1e-10)
     (evals, evecs) = np.linalg.eigh(M)
 
     rorden = np.argsort(rvals)
@@ -38,11 +37,9 @@ def test_power(M):
 
 
 if __name__ == '__main__':
-    M = np.random.rand(5,5)
-    #M = np.array([1,2,3,7,8,9,4,5,6]).reshape(3, 3)
+    M = np.random.rand(100,100)
     N = np.transpose(M)
     O = M + N
-    print(1)
     test_power(O)
-    #test_deflation(O)
+    test_deflation(O)
 
