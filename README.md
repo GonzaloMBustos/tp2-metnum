@@ -30,3 +30,6 @@ Para ejecutar la notebook, es suficiente hacer doble click sobre el archivo (sie
 ## INSTRUCCIONES PARA LIMPIAR LOS ARCHIVOS CREADOS AL COMPILAR:
 $ cd [RUTA_PROYECTO]/src
 $ ./clear_build.sh
+
+## INSTRUCCIONES PARA CORRER LOS TEST DEL MÉTODOS DE CALCULO DE AUTOVALORES Y AUTOVECTORES 
+$ pytest --pyargs test_deflationpower.py
