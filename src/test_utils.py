@@ -14,7 +14,14 @@ def leer_karateclub(path = "../datasets/karateclub_matriz.txt"):
       i+=1
   return M
 
-def test_deflation(M):
+def write_test_error(metodo, test, error):
+  path = "tests_error_" + metodo + ".txt"
+  file = open(path, "a")
+  L = [test + "  ", str(error), "\n"]
+  file.writelines(L)
+
+
+def test_deflation(M, test):
 
     num = M.shape[0]
 
@@ -37,16 +44,20 @@ def test_deflation(M):
     evecs = evecs[::, eorden]
 
     prodinter = np.zeros(num)
+    error = np.zeros(num)
 
     for i in range(num):
 
         prodinter[i] = abs(np.dot(evecs[::,i], rvecs[::,i]))
+        error[i] = np.median(abs(M@rvecs[::,i] - rvals[i]*rvecs[::,i]))
 
     todosunos = np.ones(num)
+     
+    write_test_error("deflation", test, np.median(error))
 
     return np.allclose(rvals, evals, epsilon),  np.allclose(prodinter, todosunos, epsilon)
 
-def test_power(M):
+def test_power(M, test):
 
     num = M.shape[0]
 
@@ -67,4 +78,6 @@ def test_power(M):
     eval = evals[0]
     evec = evecs[:, 0]
 
+    error = abs(M@rvec - rval*rvec)
+    write_test_error("potencia", test, np.median(error))
     return abs(rval-eval) < epsilon, np.allclose(abs(np.dot(evec, rvec)), 1, epsilon)
