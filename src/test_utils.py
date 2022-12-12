@@ -49,11 +49,11 @@ def test_deflation(M, test):
     for i in range(num):
 
         prodinter[i] = abs(np.dot(evecs[::,i], rvecs[::,i]))
-        error[i] = np.median(abs(M@rvecs[::,i] - rvals[i]*rvecs[::,i]))
+        error[i] = np.max(abs(M@rvecs[::,i] - rvals[i]*rvecs[::,i]))
 
     todosunos = np.ones(num)
      
-    write_test_error("deflation", test, np.median(error))
+    write_test_error("deflation", test, np.mean(error))
 
     return np.allclose(rvals, evals, epsilon),  np.allclose(prodinter, todosunos, epsilon)
 
@@ -79,5 +79,5 @@ def test_power(M, test):
     evec = evecs[:, 0]
 
     error = abs(M@rvec - rval*rvec)
-    write_test_error("potencia", test, np.median(error))
+    write_test_error("potencia", test, np.max(error))
     return abs(rval-eval) < epsilon, np.allclose(abs(np.dot(evec, rvec)), 1, epsilon)
